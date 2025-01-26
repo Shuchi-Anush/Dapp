@@ -2,7 +2,7 @@ const hre = require("hardhat");
 
 async function main() {
   // Get the contract factory for "Twitter"
-  const Twitter = await hre.ethers.getContractFactory("Twitter");
+  const Twitter = await hre.ethers.getContractFactory("Contract");
 
   // Deploy the contract
   const twitter = await Twitter.deploy();
@@ -11,8 +11,7 @@ async function main() {
   await twitter.deployed();
 
   // Interact with the contract (call the `sayhi` function)
-  const message = await twitter.sayhi();
-  console.log(`sayhi() function output: ${message}`);
+
 
   // Log the contract's address to the console
   console.log("Twitter contract deployed to:", twitter.address);
